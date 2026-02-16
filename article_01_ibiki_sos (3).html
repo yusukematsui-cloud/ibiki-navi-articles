@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>いびきは体のSOS？放置してはいけない5つの理由</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Noto Sans JP", -apple-system, sans-serif;
+    color: #222;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.95;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .hero { width: 100%; overflow: hidden; }
+  .hero img { width: 100%; display: block; max-height: 400px; object-fit: cover; }
+
+  .article { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+
+  .kicker { margin-top: 24px; font-size: 12px; color: #0066cc; font-weight: 700; }
+
+  .title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 24px; font-weight: 900; line-height: 1.5;
+    color: #111; margin: 8px 0 12px;
+  }
+
+  .byline {
+    font-size: 12px; color: #999; margin-bottom: 20px;
+    padding-bottom: 20px; border-bottom: 1px solid #e8e8e8;
+  }
+
+  .lead { font-size: 15px; color: #444; margin-bottom: 32px; }
+
+  h2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px; font-weight: 900; color: #111;
+    line-height: 1.55; margin: 48px 0 18px;
+  }
+
+  p { font-size: 16px; color: #333; line-height: 1.95; margin-bottom: 24px; }
+
+  strong { font-weight: 700; color: #111; }
+
+  .u { background: linear-gradient(transparent 60%, #fef08a 60%); }
+
+  figure { margin: 32px -20px; }
+  figure img { width: 100%; display: block; }
+  figcaption { padding: 8px 20px 0; font-size: 12px; color: #999; line-height: 1.6; }
+
+  .keynum {
+    text-align: center; margin: 32px 0; padding: 24px 0;
+    border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8;
+  }
+  .keynum-num {
+    font-family: "Noto Serif JP", serif;
+    font-size: 40px; font-weight: 900; color: #111; line-height: 1.2;
+  }
+  .keynum-label { font-size: 13px; color: #666; margin-top: 6px; line-height: 1.7; }
+
+  .infographic {
+    margin: 32px 0;
+    padding: 24px 20px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .infographic-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .info-row {
+    display: flex;
+    gap: 24px;
+  }
+  .info-col {
+    flex: 1;
+    text-align: center;
+  }
+  .info-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .info-icons {
+    padding: 0 8px;
+    margin-bottom: 8px;
+  }
+  .info-icons svg {
+    width: 100%;
+    height: auto;
+  }
+  .info-pct {
+    font-family: "Noto Serif JP", serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #111;
+    line-height: 1.2;
+  }
+  .info-desc {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .datatbl { width: 100%; margin: 28px 0; border-collapse: collapse; }
+
+  .risk-chart {
+    margin: 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .risk-item {}
+  .risk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .risk-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+  }
+  .risk-val {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #111;
+  }
+  .risk-bar-bg {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .risk-bar {
+    height: 100%;
+    background: #222;
+    border-radius: 4px;
+  }
+  .risk-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+  }
+  .datatbl th {
+    text-align: left; font-size: 13px; font-weight: 500; color: #999;
+    padding: 10px 0; border-bottom: 1px solid #e8e8e8; white-space: nowrap; width: 40%;
+  }
+  .datatbl td {
+    text-align: right; font-family: "Noto Serif JP", serif;
+    font-size: 22px; font-weight: 900; color: #111;
+    padding: 10px 0; border-bottom: 1px solid #e8e8e8;
+  }
+  .datatbl tr:last-child th, .datatbl tr:last-child td { border-bottom: none; }
+  .datatbl .sub {
+    display: block; font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px; font-weight: 400; color: #999; margin-top: 2px;
+  }
+
+  aside {
+    border-top: 2px solid #111; margin: 32px 0; padding-top: 14px;
+  }
+  aside .aside-title { font-size: 13px; font-weight: 700; color: #111; margin-bottom: 8px; }
+  aside p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 0; }
+
+  .check {
+    margin: 28px 0; border-top: 2px solid #111; padding-top: 14px;
+  }
+  .check-title { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 12px; }
+  .check ul { list-style: none; }
+  .check li {
+    padding: 8px 0; padding-left: 24px; position: relative;
+    font-size: 15px; color: #333; border-bottom: 1px solid #f0f0f0;
+  }
+  .check li:last-child { border-bottom: none; }
+  .check li::before { content: "\2610"; position: absolute; left: 0; color: #bbb; }
+
+  blockquote {
+    margin: 32px 0; padding: 0 0 0 16px;
+    border-left: 3px solid #111;
+    font-size: 15px; color: #333; line-height: 1.9; font-style: italic;
+  }
+
+  hr { border: none; border-top: 1px solid #e8e8e8; margin: 48px 0; }
+
+  .summary {
+    border-top: 2px solid #111; margin: 40px 0; padding-top: 16px;
+  }
+  .summary-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 16px; font-weight: 900; color: #111; margin-bottom: 14px;
+  }
+  .summary ol { padding-left: 22px; }
+  .summary li { font-size: 14px; color: #444; margin-bottom: 8px; line-height: 1.85; }
+
+  .cta { text-align: center; margin: 40px 0 24px; }
+  .cta p { font-size: 14px; color: #888; margin-bottom: 16px; }
+  .cta a {
+    display: block; background: #111; color: #fff;
+    font-size: 15px; font-weight: 700; padding: 16px;
+    text-decoration: none; text-align: center; transition: opacity 0.15s;
+  }
+  .cta a:active { opacity: 0.8; }
+  .cta .cta-sub { font-size: 12px; color: #bbb; margin-top: 8px; }
+
+  .next {
+    display: block; text-decoration: none; color: inherit;
+    padding: 16px 0; border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8; margin-bottom: 24px;
+  }
+  .next:active { background: #fafafa; }
+  .next-kicker { font-size: 11px; color: #999; letter-spacing: 1px; font-weight: 500; }
+  .next-title { font-size: 15px; font-weight: 700; color: #111; margin-top: 2px; line-height: 1.6; }
+
+  .sources { font-size: 11px; color: #bbb; line-height: 1.9; padding-bottom: 48px; }
+  .sources p { margin-bottom: 0; font-size: 11px; color: #bbb; }
+
+  .app-hint {
+    font-size: 13px; color: #999;
+    border-left: 3px solid #ddd; padding-left: 12px; margin-bottom: 32px;
+  }
+
+  .toc {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 20px 20px 16px;
+    margin-bottom: 32px;
+  }
+  .toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+  .toc ol {
+    padding-left: 22px;
+  }
+  .toc li {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+  .toc a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  .toc a:active {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="hero.jpg" alt="暗い寝室で眠る人">
+</div>
+
+<div class="article">
+
+  <div class="kicker">睡眠と健康</div>
+  <h1 class="title">いびきは体のSOS？<br>放置してはいけない5つの理由</h1>
+  <div class="byline">2026年2月16日 ・ 5分で読める</div>
+
+  <p class="lead">
+    家族やパートナーから「いびき、すごかったよ」と言われたこと、ありませんか？ 多くの人は笑って済ませますが、実はそのいびき、放っておくと怖いことになるかもしれません。
+  </p>
+
+  <nav class="toc">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#sec1">いびき＝「よく寝ている証拠」は誤解です</a></li>
+      <li><a href="#sec2">「いびきの延長線」に潜む病気があります</a></li>
+      <li><a href="#sec3">毎晩、心臓と脳が悲鳴を上げています</a></li>
+      <li><a href="#sec4">「最近なんか調子悪い」の正体</a></li>
+      <li><a href="#sec5">「太ってないから関係ない」は通用しません</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <h2 id="sec1">1. いびき＝「よく寝ている証拠」は誤解です</h2>
+
+  <p>「いびきをかいて寝てるなんて、気持ちよさそう」。よくそんなふうに言われます。でも、これは完全な誤解です。</p>
+
+  <p>いびきの音は、狭くなった気道を空気が無理やり通るときに生まれます。つまり、<span class="u">喉の奥では息をするたびに"渋滞"が起きている</span>ようなもの。脳波を測ると、いびきをかいている時間帯の睡眠は明らかに浅いことがわかっています。</p>
+
+  <p>8時間しっかり寝たつもりなのに、朝からだるい。それは根性の問題ではなく、いびきのせいかもしれません。</p>
+
+  <figure>
+    <img src="airway.jpg" alt="仰向けで寝ている人の気道が狭くなっている様子">
+    <figcaption>仰向けで寝ると舌が落ち込み、気道が狭くなる。これがいびきの原因。</figcaption>
+  </figure>
+
+  <aside>
+    <div class="aside-title">いびきと無呼吸の違い</div>
+    <p>気道が「狭い」と空気が振動していびきが鳴ります。さらに「完全に塞がる」と、空気が通れなくなり呼吸そのものが止まります。これが睡眠時無呼吸です。いびきと無呼吸は、程度の違いであって別の病気ではありません。</p>
+  </aside>
+
+  <!-- 2 -->
+  <h2 id="sec2">2. 「いびきの延長線」に潜む病気があります</h2>
+
+  <p>いびきがひどくなった先に待っているのが、<strong>睡眠時無呼吸症候群（SAS）</strong>です。寝ている間に何十回、ひどい人は何百回も呼吸が止まる病気で、日本には<strong>推計300〜900万人</strong>の潜在患者がいるとされています。</p>
+
+  <p>ところが、実際に治療を受けている人はわずか数十万人。これだけ患者数と治療数にギャップがある病気は珍しいと言えます。</p>
+
+  <div class="infographic">
+    <div class="infographic-title">いびきをかく人のうち、病的な無呼吸が隠れている割合</div>
+    <div class="info-row">
+      <div class="info-col">
+        <div class="info-label">男性</div>
+        <div class="info-icons">
+          <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#111" opacity="1"><circle cx="12" cy="8" r="5"/><rect x="6" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#111" opacity="1"><circle cx="36" cy="8" r="5"/><rect x="30" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#111" opacity="1"><circle cx="60" cy="8" r="5"/><rect x="54" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="84" cy="8" r="5"/><rect x="78" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="108" cy="8" r="5"/><rect x="102" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="132" cy="8" r="5"/><rect x="126" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="156" cy="8" r="5"/><rect x="150" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="180" cy="8" r="5"/><rect x="174" y="15" width="12" height="18" rx="3"/></g>
+          </svg>
+          <!-- 3 out of 8 shown ≈ 30% visual approximation. Using 10 icons below for precision -->
+        </div>
+        <div class="info-pct">30%</div>
+        <div class="info-desc">約3人に1人</div>
+      </div>
+      <div class="info-col">
+        <div class="info-label">女性</div>
+        <div class="info-icons">
+          <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#111" opacity="1"><circle cx="12" cy="8" r="5"/><rect x="6" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#111" opacity="1"><circle cx="36" cy="8" r="5"/><rect x="30" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="60" cy="8" r="5"/><rect x="54" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="84" cy="8" r="5"/><rect x="78" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="108" cy="8" r="5"/><rect x="102" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="132" cy="8" r="5"/><rect x="126" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="156" cy="8" r="5"/><rect x="150" y="15" width="12" height="18" rx="3"/></g>
+            <g fill="#ddd" opacity="1"><circle cx="180" cy="8" r="5"/><rect x="174" y="15" width="12" height="18" rx="3"/></g>
+          </svg>
+        </div>
+        <div class="info-pct">20%</div>
+        <div class="info-desc">約5人に1人</div>
+      </div>
+    </div>
+  </div>
+
+  <p>なぜこれほど見過ごされるのか。理由はシンプルで、<strong>本人がまったく気づかない</strong>からです。呼吸が止まるのは寝ている間。止まるたびに脳が一瞬だけ覚醒して呼吸を再開しますが、これは意識には残りません。朝起きたときには「普通に寝た」としか感じないのです。</p>
+
+  <!-- 3 -->
+  <h2 id="sec3">3. 毎晩、心臓と脳が悲鳴を上げています</h2>
+
+  <p>ここからが、本当に怖い話です。</p>
+
+  <p>呼吸が止まると、体は酸欠になります。すると脳が「まずい」と判断して交感神経を叩き起こし、心拍数と血圧を急上昇させます。本来なら体を休める時間であるはずの睡眠中に、これが毎晩、何十回と繰り返されるわけです。</p>
+
+  <figure>
+    <img src="heart-brain.jpg" alt="心臓と脳が血管でつながった医療イラスト">
+    <figcaption>心臓と脳——睡眠時無呼吸のダメージは全身の血管に及ぶ。</figcaption>
+  </figure>
+
+  <p>医学研究で報告されているリスクの大きさを見てみてください。いずれも、いびきのない健康な人と比べた倍率です。</p>
+
+  <div class="risk-chart">
+    <div class="risk-item">
+      <div class="risk-header">
+        <span class="risk-name">心臓突然死</span>
+        <span class="risk-val">2.57倍</span>
+      </div>
+      <div class="risk-bar-bg"><div class="risk-bar" style="width: 43%;"></div></div>
+      <div class="risk-note">特に深夜〜早朝の時間帯にリスクが集中</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-header">
+        <span class="risk-name">脳卒中</span>
+        <span class="risk-val">約4倍</span>
+      </div>
+      <div class="risk-bar-bg"><div class="risk-bar" style="width: 67%;"></div></div>
+      <div class="risk-note">重度の無呼吸症候群の場合</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-header">
+        <span class="risk-name">不整脈</span>
+        <span class="risk-val">2〜4倍</span>
+      </div>
+      <div class="risk-bar-bg"><div class="risk-bar" style="width: 55%;"></div></div>
+      <div class="risk-note">患者の約半数に夜間の不整脈が認められている</div>
+    </div>
+  </div>
+
+  <p>もうひとつ気になるデータがあります。心筋梗塞を起こした人を調べると約30%にSASが見つかり、糖尿病患者でも同じく約30%。どちらが先かはケースバイケースですが、SASが生活習慣病の「隠れた引き金」になっている可能性は高いと言われています。</p>
+
+  <!-- 4 -->
+  <h2 id="sec4">4. 「最近なんか調子悪い」の正体</h2>
+
+  <p>ここまでは将来のリスクの話でしたが、SASの影響は今この瞬間にも出ています。</p>
+
+  <p>毎晩まともに眠れていないわけですから、日中の眠気は当然です。ただ、やっかいなのは「寝不足」とは感じないこと。本人はちゃんと寝ているつもりなので、だるさの原因がわからない。「最近なんか集中できない」「歳かな」で片付けてしまいがちです。</p>
+
+  <div class="keynum">
+    <div class="keynum-num">約7倍</div>
+    <div class="keynum-label">中等症以上のSAS患者が交通事故を起こす頻度。<br>居眠り・注意力低下が主な原因です。</div>
+  </div>
+
+  <figure>
+    <img src="office-fatigue.jpg" alt="オフィスで疲れた様子のビジネスマン">
+    <figcaption>午後のデスクで抗えない眠気。コーヒーでは解決しない問題かもしれません。</figcaption>
+  </figure>
+
+  <p>2003年の新幹線居眠り運転、2012年の高速バス事故。どちらもSASとの関連が指摘されました。事故のニュースは他人事に聞こえるかもしれませんが、同じ状態で毎日車を運転していると考えると、決して大げさな話ではありません。</p>
+
+  <div class="check">
+    <div class="check-title">心当たりはありませんか？</div>
+    <ul>
+      <li>しっかり寝たはずなのに、朝からだるい</li>
+      <li>会議中や運転中に強烈な眠気がくる</li>
+      <li>朝起きると頭が痛い、口がカラカラ</li>
+      <li>夜中にトイレで2回以上起きる</li>
+      <li>最近、集中力が明らかに落ちた</li>
+      <li>パートナーに「息が止まってた」と言われたことがある</li>
+    </ul>
+  </div>
+
+  <p>2つ以上当てはまるなら、一度いびきを録音してみる価値はあります。</p>
+
+  <!-- 5 -->
+  <h2 id="sec5">5. 「太ってないから関係ない」は通用しません</h2>
+
+  <p>SAS＝太っている人の病気、というイメージが根強くあります。たしかに肥満はリスク要因のひとつですが、それだけではありません。</p>
+
+  <p>日本人に多いのは、<span class="u">顎が小さく、もともと気道のスペースが狭い</span>というパターンです。欧米人とは骨格が違うので、BMIが正常でもSASを発症するケースは珍しくありません。扁桃腺が大きい、舌が大きいといった体質的な要因もあります。</p>
+
+  <figure>
+    <img src="jaw-comparison.jpg" alt="通常の顎と小さい顎の気道比較">
+    <figcaption>左が通常の顎、右が小さい顎。骨格の違いだけで気道の広さはこれだけ変わる。</figcaption>
+  </figure>
+
+  <blockquote>
+    いびきをかいている時点で、太っているかどうかに関係なく、気道に何かが起きています。「自分は痩せてるから大丈夫」という思い込みが、発見を遅らせる一番の原因です。
+  </blockquote>
+
+  <hr>
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="summary-title">この記事のポイント</div>
+    <ol>
+      <li>いびきは「よく寝ている証拠」ではなく、睡眠の質が下がっているサイン</li>
+      <li>いびきの延長線上に、睡眠時無呼吸症候群（SAS）がある</li>
+      <li>SASは心臓病・脳卒中のリスクを2〜4倍以上に引き上げる</li>
+      <li>日中の不調やパフォーマンス低下の「本当の原因」かもしれない</li>
+      <li>痩せていてもリスクあり。日本人は骨格的にSASになりやすい</li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <p>まずは、自分のいびきを「見える化」してみませんか？</p>
+    <a href="#">今夜の睡眠を計測する &#8594;</a>
+    <p class="cta-sub">アプリのホーム画面に戻ります</p>
+  </div>
+
+  <!-- Next -->
+  <a href="#" class="next">
+    <div class="next-kicker">NEXT</div>
+    <div class="next-title">睡眠時無呼吸症候群（SAS）とは？ 自覚なしで進行する怖さ</div>
+  </a>
+
+  <!-- Sources -->
+  <div class="sources">
+    <p>参考文献：松浦中央病院「睡眠時無呼吸症候群について」／国立病院機構 福岡病院「睡眠時無呼吸症候群」／同友会メディカルニュース／運輸・交通SAS対策支援センター／さわやまクリニック「睡眠時無呼吸症候群」／フランスベッド「2025年 いびきに関する実態調査」／青葉台脳神経クリニック</p>
+    <p style="margin-top: 8px;">※ 本記事は医療の専門的なアドバイスに代わるものではありません。気になる症状がある方は医療機関の受診をおすすめします。</p>
+  </div>
+
+</div>
+
+</body>
+</html>
