@@ -2,905 +2,521 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>あなたのいびきは軽度？重度？｜3日間のデータでわかるタイプ診断</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
-
-    :root {
-      --primary: #1B4965;
-      --primary-light: #E8F0F6;
-      --accent: #5FA8D3;
-      --accent-warm: #F4845F;
-      --bg: #FAFBFC;
-      --card: #FFFFFF;
-      --text: #2C3E50;
-      --text-light: #6B7C93;
-      --border: #E2E8F0;
-      --success: #38A169;
-      --warning: #DD6B20;
-      --danger: #E53E3E;
-      --shadow: 0 2px 12px rgba(0,0,0,0.06);
-      --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.85;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Header */
-    .header {
-      background: linear-gradient(135deg, var(--primary) 0%, #2D6A8F 100%);
-      color: white;
-      padding: 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-inner {
-      max-width: 640px;
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
       margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .header-logo {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
-    .header-logo span {
-      color: var(--accent);
-    }
-
-    .header-badge {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 20px;
-      padding: 4px 14px;
-      font-size: 12px;
-      font-weight: 500;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* Hero */
     .hero {
-      background: linear-gradient(180deg, var(--primary) 0%, #2D6A8F 40%, var(--bg) 100%);
-      padding: 40px 20px 60px;
-    }
-
-    .hero-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .hero-day {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 24px;
-      padding: 6px 16px;
-      color: rgba(255,255,255,0.9);
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    .hero-day .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .hero h1 {
-      color: white;
-      font-size: 26px;
-      font-weight: 700;
-      line-height: 1.45;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 .highlight {
-      color: #7DD3FC;
-    }
-
-    .hero-lead {
-      color: rgba(255,255,255,0.8);
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    /* Progress bar */
-    .progress-bar {
-      max-width: 640px;
-      margin: -30px auto 0;
-      padding: 0 20px;
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%),
+                  url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=780&h=500&fit=crop') center/cover;
       position: relative;
-      z-index: 10;
     }
 
-    .progress-card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 20px 24px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--text-light);
-      margin-bottom: 10px;
-    }
-
-    .progress-track {
-      height: 6px;
-      background: #E2E8F0;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 42.9%;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
-      border-radius: 3px;
-      transition: width 0.6s ease;
-    }
-
-    .progress-days {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 12px;
-    }
-
-    .progress-days span {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
+    /* Day Badge */
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
       font-weight: 600;
-      background: #F1F5F9;
-      color: var(--text-light);
+      padding: 5px 10px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
     }
 
-    .progress-days span.active {
-      background: var(--primary);
-      color: white;
+    /* Title */
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
     }
 
-    .progress-days span.done {
-      background: var(--accent);
-      color: white;
+    /* Body text */
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
     }
 
-    /* Main Content */
-    .content {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
+    /* H2 */
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 24px 20px 0;
     }
 
     /* Data Card */
     .data-card {
-      background: var(--card);
+      background: #F7F7F5;
       border-radius: 16px;
-      padding: 28px 24px;
-      box-shadow: var(--shadow);
-      margin: 28px 0;
+      margin: 16px 20px 0;
+      padding: 14px 16px 16px;
+      width: 350px;
     }
 
-    .data-card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .data-card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-
-    .data-card-icon.blue { background: #EBF5FF; }
-    .data-card-icon.green { background: #E6F9EE; }
-    .data-card-icon.orange { background: #FFF3E6; }
-
-    .data-card-title {
-      font-size: 16px;
+    .data-card .dc-title {
+      font-size: 14px;
       font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 8px;
     }
 
-    /* Data Table */
-    .data-table {
+    .data-card .dc-divider {
+      height: 1px;
+      background: #E2E8F0;
+      margin-bottom: 10px;
+    }
+
+    .data-card table {
       width: 100%;
       border-collapse: collapse;
-      margin: 16px 0;
       font-size: 14px;
     }
 
-    .data-table th {
-      background: var(--primary-light);
-      color: var(--primary);
+    .data-card th {
+      font-size: 11px;
       font-weight: 600;
-      padding: 10px 8px;
+      color: #6B7C93;
       text-align: center;
-      font-size: 12px;
+      padding: 4px 0;
     }
 
-    .data-table th:first-child {
-      border-radius: 8px 0 0 0;
+    .data-card th:first-child {
+      text-align: left;
     }
 
-    .data-table th:last-child {
-      border-radius: 0 8px 0 0;
-    }
-
-    .data-table td {
-      padding: 12px 8px;
+    .data-card td {
+      padding: 8px 0;
       text-align: center;
-      border-bottom: 1px solid var(--border);
+      color: #333333;
+      font-size: 14px;
+      border-bottom: 1px solid #E2E8F0;
     }
 
-    .data-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .data-table .avg-row {
-      background: #FFF7ED;
+    .data-card td:first-child {
+      text-align: left;
       font-weight: 600;
     }
 
-    .data-table .avg-row td {
-      color: var(--accent-warm);
+    .data-card tr:last-child td {
       border-bottom: none;
     }
 
-    /* Article sections */
-    .section {
-      margin-top: 40px;
-    }
-
-    h2 {
-      font-size: 20px;
+    .data-card .avg-row td {
+      color: #F4845F;
       font-weight: 700;
-      color: var(--primary);
-      line-height: 1.5;
-      margin-bottom: 16px;
-      padding-left: 16px;
-      border-left: 4px solid var(--accent);
+      border-top: 1px solid rgba(244,132,95,0.25);
+      border-bottom: none;
     }
 
-    h3 {
-      font-size: 17px;
-      font-weight: 600;
-      margin-top: 28px;
-      margin-bottom: 12px;
+    .data-card .note {
+      font-size: 12px;
+      color: #6B7C93;
+      line-height: 1.7;
+      margin-top: 10px;
     }
 
-    p {
-      font-size: 15px;
-      line-height: 1.9;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .lead-text {
-      font-size: 16px;
-      color: var(--text);
-      line-height: 1.9;
-      margin-bottom: 28px;
-    }
-
-    /* Type diagnosis cards */
+    /* Type Cards */
     .type-card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      margin: 20px 0;
-      border-left: 5px solid;
+      border-radius: 14px;
+      padding: 14px;
+      margin: 16px 20px 0;
+      width: 350px;
+      border: 1px solid;
     }
 
     .type-card.type-a {
-      border-left-color: var(--success);
+      background: #F0FFF4;
+      border-color: #38A169;
     }
 
     .type-card.type-b {
-      border-left-color: var(--warning);
+      background: #FFFBF0;
+      border-color: #DD6B20;
     }
 
     .type-card.type-c {
-      border-left-color: var(--danger);
+      background: #FFF5F5;
+      border-color: #E53E3E;
     }
 
-    .type-card-header {
+    .type-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .type-badge-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .type-badge {
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      color: #FFFFFF;
       font-size: 18px;
       font-weight: 700;
-      color: white;
+      flex-shrink: 0;
     }
 
-    .type-a .type-badge { background: var(--success); }
-    .type-b .type-badge { background: var(--warning); }
-    .type-c .type-badge { background: var(--danger); }
+    .type-a .type-badge-circle { background: #38A169; }
+    .type-b .type-badge-circle { background: #DD6B20; }
+    .type-c .type-badge-circle { background: #E53E3E; }
 
-    .type-card-title {
-      flex: 1;
-    }
-
-    .type-card-title .type-name {
+    .type-info .type-name {
       font-size: 16px;
       font-weight: 700;
-      color: var(--text);
+      color: #1A1A1A;
     }
 
-    .type-card-title .type-range {
+    .type-info .type-range {
       font-size: 12px;
-      color: var(--text-light);
+      color: #6B7C93;
     }
 
     .type-keyword {
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin: 8px 0;
     }
 
-    .type-a .type-keyword { color: var(--success); }
-    .type-b .type-keyword { color: var(--warning); }
-    .type-c .type-keyword { color: var(--danger); }
+    .type-a .type-keyword { color: #38A169; }
+    .type-b .type-keyword { color: #DD6B20; }
+    .type-c .type-keyword { color: #E53E3E; }
 
-    .type-card p {
+    .type-body {
       font-size: 14px;
-      margin-bottom: 10px;
+      line-height: 1.8;
+      color: #333333;
     }
 
-    .type-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Result highlight */
-    .result-card {
-      background: linear-gradient(135deg, var(--primary) 0%, #2D6A8F 100%);
-      border-radius: 16px;
-      padding: 32px 24px;
-      text-align: center;
-      margin: 32px 0;
-      color: white;
-    }
-
-    .result-card .result-label {
+    .type-symptom {
       font-size: 13px;
-      opacity: 0.8;
-      margin-bottom: 8px;
+      line-height: 1.7;
+      color: #E53E3E;
+      margin-top: 10px;
     }
 
-    .result-card .result-type {
+    /* Result Card */
+    .result-card {
+      background: #1B4965;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 20px 0;
+      width: 350px;
+      text-align: center;
+    }
+
+    .result-card .label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .result-card .type-result {
+      font-family: 'Noto Serif JP', serif;
       font-size: 36px;
       font-weight: 700;
-      margin-bottom: 6px;
+      color: #FFFFFF;
+      margin: 4px 0;
     }
 
-    .result-card .result-name {
+    .result-card .type-name {
       font-size: 18px;
       font-weight: 500;
-      opacity: 0.9;
-      margin-bottom: 16px;
+      color: rgba(255,255,255,0.87);
+      margin-bottom: 12px;
     }
 
-    .result-card .result-desc {
+    .result-card .type-desc {
       font-size: 14px;
-      line-height: 1.8;
-      opacity: 0.85;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.73);
     }
 
-    /* Comparison section */
-    .comparison-card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      margin: 24px 0;
-    }
-
-    .comparison-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .comparison-row:last-child {
-      border-bottom: none;
-    }
-
-    .comparison-label {
-      font-size: 14px;
-      color: var(--text-light);
-    }
-
-    .comparison-value {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .comparison-value span {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--text-light);
-    }
-
-    .comparison-value.user {
-      color: var(--accent-warm);
-    }
-
-    /* Symptom list */
-    .symptom-list {
-      background: #FFF5F5;
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin: 16px 0;
-    }
-
-    .symptom-list ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .symptom-list li {
-      font-size: 14px;
-      line-height: 1.8;
-      padding: 6px 0;
-      padding-left: 24px;
-      position: relative;
-    }
-
-    .symptom-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--danger);
-    }
-
-    /* Callout box */
+    /* Callout */
     .callout {
-      background: var(--primary-light);
       border-radius: 14px;
-      padding: 20px 24px;
-      margin: 24px 0;
-      border-left: 4px solid var(--accent);
-    }
-
-    .callout p {
-      font-size: 14px;
-      color: var(--primary);
-      margin-bottom: 0;
-    }
-
-    .callout strong {
-      font-weight: 600;
+      padding: 12px 16px;
+      margin: 16px 20px 0;
+      width: 350px;
     }
 
     .callout.warm {
       background: #FFF7ED;
-      border-left-color: var(--accent-warm);
     }
 
     .callout.warm p {
+      font-size: 13px;
+      line-height: 1.7;
       color: #9A3412;
     }
 
-    /* Stats row */
-    .stat-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 24px 0;
+    .callout.blue {
+      background: #E8F0F6;
     }
 
-    .stat-item {
-      background: var(--card);
-      border-radius: 14px;
+    .callout.blue p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+    }
+
+    /* Tomorrow Card */
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
       padding: 20px;
-      box-shadow: var(--shadow);
-      text-align: center;
+      margin: 24px 20px 0;
+      width: 350px;
     }
 
-    .stat-item .number {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--primary);
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
     }
 
-    .stat-item .number span {
-      font-size: 16px;
-    }
-
-    .stat-item .desc {
+    .tomorrow-card .sub-title {
       font-size: 12px;
-      color: var(--text-light);
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
       margin-top: 4px;
     }
 
-    /* Source */
-    .source {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 6px;
-      padding-left: 14px;
-      border-left: 2px solid var(--border);
-    }
-
-    /* Next preview */
-    .next-preview {
-      background: linear-gradient(135deg, var(--primary) 0%, #2D6A8F 100%);
-      border-radius: 16px;
-      padding: 28px 24px;
-      margin-top: 40px;
-      color: white;
-    }
-
-    .next-preview .label {
-      font-size: 12px;
-      font-weight: 500;
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-
-    .next-preview .title {
-      font-size: 17px;
-      font-weight: 600;
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
       line-height: 1.6;
-      margin-bottom: 12px;
+      margin-top: 8px;
     }
 
-    .next-preview .desc {
-      font-size: 14px;
-      opacity: 0.8;
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
       line-height: 1.7;
+      margin-top: 12px;
     }
 
-    /* CTA section */
+    /* CTA Button */
     .cta-section {
       text-align: center;
-      margin-top: 36px;
-      padding: 28px 0;
+      margin-top: 24px;
     }
 
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-      color: white;
-      padding: 16px 40px;
-      border-radius: 50px;
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
       font-size: 16px;
       font-weight: 600;
+      padding: 12px 40px;
+      border-radius: 25px;
       text-decoration: none;
-      box-shadow: 0 4px 20px rgba(27,73,101,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(27,73,101,0.4);
+      width: 220px;
+      text-align: center;
     }
 
     .cta-sub {
-      font-size: 13px;
-      color: var(--text-light);
+      font-size: 12px;
+      color: #999999;
       margin-top: 12px;
+      text-align: center;
     }
 
     /* Footer */
     .footer {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 24px 20px 40px;
       text-align: center;
-      border-top: 1px solid var(--border);
+      padding: 28px 20px 16px;
     }
 
     .footer p {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-bottom: 4px;
-    }
-
-    /* Separator */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 36px 0;
-    }
-
-    /* Emphasis text */
-    .emphasis {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .emphasis-warm {
-      font-weight: 600;
-      color: var(--accent-warm);
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 22px; }
-      .data-table { font-size: 13px; }
-      .data-table th, .data-table td { padding: 10px 6px; }
-      .result-card .result-type { font-size: 30px; }
-      .stat-row { grid-template-columns: 1fr; gap: 10px; }
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="header-logo">いびき<span>ナビ</span></div>
-      <div class="header-badge">7日間プログラム</div>
-    </div>
-  </header>
+  <!-- Hero Image -->
+  <div class="hero"></div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-day">
-        <span class="dot"></span>
-        Day 3 ── 自分ごと化
-      </div>
-      <h1>あなたのいびきは軽度？重度？｜<br>3日間のデータでわかる<span class="highlight">タイプ診断</span></h1>
-      <p class="hero-lead">3日間の計測、お疲れさまでした。データが揃いました。<br>あなたのいびきが「軽度」「中程度」「重度」のどれに当たるか、結果をお伝えします。</p>
-    </div>
-  </section>
+  <!-- Day Badge -->
+  <div class="day-badge">Day 3 ── 自分ごと化</div>
 
-  <!-- Progress -->
-  <div class="progress-bar">
-    <div class="progress-card">
-      <div class="progress-label">
-        <span>7日間いびき改善プログラム</span>
-        <span>3 / 7</span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill"></div>
-      </div>
-      <div class="progress-days">
-        <span class="done">1</span>
-        <span class="done">2</span>
-        <span class="active">3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-      </div>
-    </div>
+  <!-- Title -->
+  <h1 class="article-title">あなたのいびきは<br>軽度？重度？<br>3日間のデータでわかる<br>タイプ診断</h1>
+
+  <!-- Lead -->
+  <p class="body-text">おはようございます。<br>3日間の計測、本当にお疲れさまでした。</p>
+  <p class="body-text">今日は少し特別な回です。3日分のデータが揃ったことで、あなたのいびきの「パターン」が見えてきました。</p>
+
+  <!-- H2: 計測データまとめ -->
+  <h2 class="section-h2">3日間の計測データまとめ</h2>
+
+  <!-- Data Card -->
+  <div class="data-card">
+    <div class="dc-title">📊 3日間の計測サマリー</div>
+    <div class="dc-divider"></div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>最大音量</th>
+          <th>平均音量</th>
+          <th>いびき時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Day 1</td>
+          <td>{{最大音量_day1}}dB</td>
+          <td>{{平均音量_day1}}dB</td>
+          <td>{{いびき時間_day1}}分</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>{{最大音量_day2}}dB</td>
+          <td>{{平均音量_day2}}dB</td>
+          <td>{{いびき時間_day2}}分</td>
+        </tr>
+        <tr>
+          <td>Day 3</td>
+          <td>{{最大音量_day3}}dB</td>
+          <td>{{平均音量_day3}}dB</td>
+          <td>{{いびき時間_day3}}分</td>
+        </tr>
+        <tr class="avg-row">
+          <td>3日間平均</td>
+          <td>{{最大音量_avg}}dB</td>
+          <td>{{平均音量_avg}}dB</td>
+          <td>{{いびき時間_avg}}分</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">日によって差がありますね。飲酒や疲労、寝る姿勢によっていびきの出方が変わることがわかります。</div>
   </div>
 
-  <!-- Main Content -->
-  <main class="content">
+  <!-- H2: タイプ診断 -->
+  <h2 class="section-h2">あなたのいびきタイプ診断</h2>
 
-    <p class="lead-text">おはようございます。<br>3日間の計測、本当にお疲れさまでした。今日は少し特別な回です。3日分のデータが揃ったことで、あなたのいびきの「パターン」が見えてきました。</p>
+  <p class="body-text">いびきナビでは、計測データに基づいて、いびきを3つのタイプに分類しています。3日間のデータから、あなたのタイプが判定されました。</p>
 
-    <!-- Section: 3-day Data Summary -->
-    <section class="section">
-      <h2>3日間の計測データまとめ</h2>
-
-      <div class="data-card">
-        <div class="data-card-header">
-          <div class="data-card-icon blue">📊</div>
-          <div class="data-card-title">3日間の計測サマリー</div>
-        </div>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>最大音量</th>
-              <th>平均音量</th>
-              <th>いびき時間</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Day 1</strong></td>
-              <td>63dB</td>
-              <td>48dB</td>
-              <td>142分</td>
-            </tr>
-            <tr>
-              <td><strong>Day 2</strong></td>
-              <td>58dB</td>
-              <td>45dB</td>
-              <td>128分</td>
-            </tr>
-            <tr>
-              <td><strong>Day 3</strong></td>
-              <td>66dB</td>
-              <td>51dB</td>
-              <td>155分</td>
-            </tr>
-            <tr class="avg-row">
-              <td><strong>3日間平均</strong></td>
-              <td><strong>62dB</strong></td>
-              <td><strong>48dB</strong></td>
-              <td><strong>142分</strong></td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- Type A -->
+  <div class="type-card type-a">
+    <div class="type-header">
+      <div class="type-badge-circle">A</div>
+      <div class="type-info">
+        <div class="type-name">タイプA：軽度いびき</div>
+        <div class="type-range">最大音量 40dB以下</div>
       </div>
-
-      <div class="callout">
-        <p>日によって差がありますね。飲酒や疲労、寝る姿勢によっていびきの出方が変わることがわかります。<strong>3日間の平均値</strong>をもとに、あなたのいびきタイプを判定します。</p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Section: Type Diagnosis -->
-    <section class="section">
-      <h2>あなたのいびきタイプ診断</h2>
-
-      <p>いびきナビでは、計測データに基づいて、いびきを3つのタイプに分類しています。3日間のデータから、あなたのタイプが判定されました。</p>
-
-      <!-- Type A -->
-      <div class="type-card type-a">
-        <div class="type-card-header">
-          <div class="type-badge">A</div>
-          <div class="type-card-title">
-            <div class="type-name">タイプA：軽度いびき</div>
-            <div class="type-range">最大音量 40dB以下</div>
-          </div>
-        </div>
-        <div class="type-keyword">「今は大丈夫。でも油断は禁物」</div>
-        <p>現時点では、いびきの音量は比較的おだやかな範囲です。健康への差し迫ったリスクは低いと考えられます。</p>
-        <p>ただし、いびきは年齢とともに悪化する傾向があります。加齢による喉の筋力低下、体重の増加、飲酒の習慣などが重なると、数年のうちにタイプBやCへ進行するケースは珍しくありません。</p>
-        <p>日本睡眠学会のデータによると、<span class="emphasis">40代で軽度だったいびきが、50代で中程度以上に悪化する割合は約30%</span>にのぼります。</p>
-      </div>
-
-      <!-- Type B -->
-      <div class="type-card type-b">
-        <div class="type-card-header">
-          <div class="type-badge">B</div>
-          <div class="type-card-title">
-            <div class="type-name">タイプB：中程度いびき</div>
-            <div class="type-range">最大音量 50〜65dB</div>
-          </div>
-        </div>
-        <div class="type-keyword">「家族の睡眠に影響が出ているレベル」</div>
-        <p>このレベルのいびきは、同室で寝ているパートナーの睡眠に確実に影響を及ぼしています。普通の会話（60dB）前後の音が、夜中ずっと続いている状態です。</p>
-        <p>医学的には、<span class="emphasis-warm">気道がかなり狭くなっている可能性</span>があります。特に、仰向けで寝ているときにいびきが大きくなる傾向がある場合は、舌根の落ち込みが主な原因と考えられます。</p>
-        <p>疫学研究によると、50dB以上の習慣的ないびきをかく人は、将来的に<span class="emphasis-warm">睡眠時無呼吸症候群(SAS)に移行するリスクが高い</span>とされています。</p>
-        <div class="source">出典: Young T, et al. "Epidemiology of obstructive sleep apnea." American Journal of Respiratory and Critical Care Medicine, 2002</div>
-      </div>
-
-      <!-- Type C -->
-      <div class="type-card type-c">
-        <div class="type-card-header">
-          <div class="type-badge">C</div>
-          <div class="type-card-title">
-            <div class="type-name">タイプC：重度いびき</div>
-            <div class="type-range">最大音量 65dB以上 / 無呼吸検出あり</div>
-          </div>
-        </div>
-        <div class="type-keyword">「体がSOSを出しています」</div>
-        <p>65dBを超えるいびきは、掃除機や目覚まし時計に匹敵する音量です。そして、この音量のいびきをかいている人は、<span class="emphasis">睡眠中に何度も呼吸が止まっている可能性</span>があります。</p>
-        <p><span class="emphasis">睡眠時無呼吸症候群（SAS）は、日本国内で推定300〜500万人</span>の潜在患者がいるとされています。しかし、実際に治療を受けている人はその一部に過ぎません。</p>
-        <div class="source">出典: 日本呼吸器学会ガイドライン, 2020</div>
-
-        <div class="symptom-list">
-          <p style="font-size:13px; font-weight:600; color:var(--danger); margin-bottom:8px;">日中にこんな症状はありませんか？</p>
-          <ul>
-            <li>朝起きたとき、ぐっすり眠った感じがしない</li>
-            <li>会議中や運転中に強い眠気がある</li>
-            <li>起床時に頭痛がある、口がカラカラに乾いている</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Section: Your Result -->
-    <section class="section">
-      <h2>あなたの判定結果</h2>
-
-      <p>3日間の計測データから、あなたのいびきタイプは...</p>
-
-      <div class="result-card">
-        <div class="result-label">あなたのいびきタイプ</div>
-        <div class="result-type">タイプB</div>
-        <div class="result-name">中程度いびき</div>
-        <div class="result-desc">今がちょうど「対策を始めるベストなタイミング」です。<br>悪化する前に手を打てる段階にいるということは、<br>むしろ良いニュースです。</div>
-      </div>
-
-      <div class="callout warm">
-        <p>具体的な対策はDay 6でお伝えしますので、もう少し計測を続けてください。<strong>データが多いほど、より的確なアドバイスができます。</strong></p>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- Section: Next steps -->
-    <section class="section">
-      <h2>これから何をすればいいか</h2>
-
-      <p>まずはあと4日間、計測を続けてください。データが多いほど、正確な傾向がわかります。</p>
-
-      <p>今のうちから自分のいびきを「見える化」しておくことが、将来のリスク予防につながります。引き続き計測を続けて、変化があったときにすぐ気づけるようにしましょう。</p>
-
-      <div class="callout">
-        <p><strong>あと4日間のプログラムで、具体的な改善策までお伝えします。</strong><br>焦る必要はありません。大切なのは「知ること」と「正しく対処すること」です。</p>
-      </div>
-    </section>
-
-    <!-- Next day preview -->
-    <div class="next-preview">
-      <div class="label">明日のコラム</div>
-      <div class="title">いびきを放置するとどうなる？｜10年後に待っている4つのリスク</div>
-      <div class="desc">「今は大丈夫」と思っている方にこそ読んでほしい内容です。時間の経過とともに、いびきがどんな影響をもたらすのか。研究データと実例をもとにお伝えします。</div>
     </div>
+    <div class="type-keyword">「今は大丈夫。でも油断は禁物」</div>
+    <div class="type-body">現時点では音量は比較的おだやかな範囲です。ただし年齢とともに悪化する傾向があり、40代で軽度→50代で中程度以上に悪化する割合は約30%にのぼります。</div>
+  </div>
 
-    <!-- CTA -->
-    <div class="cta-section">
-      <a href="#" class="cta-button">
-        今夜も計測する 🌙
-      </a>
-      <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  <!-- Type B -->
+  <div class="type-card type-b">
+    <div class="type-header">
+      <div class="type-badge-circle">B</div>
+      <div class="type-info">
+        <div class="type-name">タイプB：中程度いびき</div>
+        <div class="type-range">最大音量 50〜65dB</div>
+      </div>
     </div>
+    <div class="type-keyword">「家族の睡眠に影響が出ているレベル」</div>
+    <div class="type-body">同室のパートナーの睡眠に確実に影響。気道がかなり狭くなっている可能性があります。50dB以上の習慣的いびきは睡眠時無呼吸症候群に移行するリスクが高いとされています。今対策を始めれば改善の余地が大きい段階です。</div>
+  </div>
 
-  </main>
+  <!-- Type C -->
+  <div class="type-card type-c">
+    <div class="type-header">
+      <div class="type-badge-circle">C</div>
+      <div class="type-info">
+        <div class="type-name">タイプC：重度いびき</div>
+        <div class="type-range">最大音量 65dB以上 / 無呼吸検出あり</div>
+      </div>
+    </div>
+    <div class="type-keyword">「体がSOSを出しています」</div>
+    <div class="type-body">65dBを超えるいびきは掃除機に匹敵する音量。睡眠中に何度も呼吸が止まっている可能性があります。睡眠時無呼吸症候群は日本国内で推定300〜500万人の潜在患者がいます。</div>
+    <div class="type-symptom">⚠ こんな症状はありませんか？<br>・朝ぐっすり眠った感じがしない<br>・会議中や運転中に強い眠気<br>・起床時に頭痛、口がカラカラ</div>
+  </div>
+
+  <!-- H2: 判定結果 -->
+  <h2 class="section-h2">あなたの判定結果</h2>
+
+  <p class="body-text">3日間の計測データから、<br>あなたのいびきタイプは...</p>
+
+  <!-- Result Card -->
+  <div class="result-card">
+    <div class="label">あなたのいびきタイプ</div>
+    <div class="type-result">{{判定タイプ}}</div>
+    <div class="type-name">{{判定タイプ名}}</div>
+    <div class="type-desc">{{判定コメント}}</div>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout warm">
+    <p>具体的な対策はDay 6でお伝えします。データが多いほど、より的確なアドバイスができます。</p>
+  </div>
+
+  <!-- H2: これから -->
+  <h2 class="section-h2">これから何をすればいいか</h2>
+
+  <p class="body-text">まずはあと4日間、計測を続けてください。データが多いほど、正確な傾向がわかります。今のうちから自分のいびきを「見える化」しておくことが、将来のリスク予防につながります。</p>
+
+  <!-- Callout blue -->
+  <div class="callout blue">
+    <p>あと4日間のプログラムで、具体的な改善策までお伝えします。大切なのは「知ること」と「正しく対処すること」です。</p>
+  </div>
+
+  <!-- Tomorrow Card -->
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">いびきを放置するとどうなる？<br>10年後に待っている<br>4つのリスク</div>
+    <div class="desc">「今は大丈夫」と思っている方にこそ読んでほしい内容です。研究データと実例をもとにお伝えします。</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="#" class="cta-btn">今夜も計測する 🌙</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
 
   <!-- Footer -->
-  <footer class="footer">
+  <div class="footer">
     <p>いびきナビ「7日間いびき改善プログラム」Day 3</p>
-    <p>&copy; 2026 いびきナビ All Rights Reserved.</p>
-  </footer>
+    <p>© 2026 いびきナビ All Rights Reserved.</p>
+  </div>
 
 </body>
 </html>
