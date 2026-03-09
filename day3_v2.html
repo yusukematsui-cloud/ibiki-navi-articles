@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>あなたのいびきは軽度？重度？｜3日間のデータでわかるタイプ診断</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero */
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%),
+                  url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=780&h=500&fit=crop') center/cover;
+      position: relative;
+    }
+
+    /* Day Badge */
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    /* Title */
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    /* Body text */
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    /* H2 */
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 24px 20px 0;
+    }
+
+    /* Data Card */
+    .data-card {
+      background: #F7F7F5;
+      border-radius: 16px;
+      margin: 16px 20px 0;
+      padding: 14px 16px 16px;
+      width: 350px;
+    }
+
+    .data-card .dc-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-bottom: 8px;
+    }
+
+    .data-card .dc-divider {
+      height: 1px;
+      background: #E2E8F0;
+      margin-bottom: 10px;
+    }
+
+    .data-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .data-card th {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6B7C93;
+      text-align: center;
+      padding: 4px 0;
+    }
+
+    .data-card th:first-child {
+      text-align: left;
+    }
+
+    .data-card td {
+      padding: 8px 0;
+      text-align: center;
+      color: #333333;
+      font-size: 14px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    .data-card td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .data-card tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-card .avg-row td {
+      color: #F4845F;
+      font-weight: 700;
+      border-top: 1px solid rgba(244,132,95,0.25);
+      border-bottom: none;
+    }
+
+    .data-card .note {
+      font-size: 12px;
+      color: #6B7C93;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    /* Type Cards */
+    .type-card {
+      border-radius: 14px;
+      padding: 14px;
+      margin: 16px 20px 0;
+      width: 350px;
+      border: 1px solid;
+    }
+
+    .type-card.type-a {
+      background: #F0FFF4;
+      border-color: #38A169;
+    }
+
+    .type-card.type-b {
+      background: #FFFBF0;
+      border-color: #DD6B20;
+    }
+
+    .type-card.type-c {
+      background: #FFF5F5;
+      border-color: #E53E3E;
+    }
+
+    .type-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .type-badge-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .type-a .type-badge-circle { background: #38A169; }
+    .type-b .type-badge-circle { background: #DD6B20; }
+    .type-c .type-badge-circle { background: #E53E3E; }
+
+    .type-info .type-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1A1A1A;
+    }
+
+    .type-info .type-range {
+      font-size: 12px;
+      color: #6B7C93;
+    }
+
+    .type-keyword {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+
+    .type-a .type-keyword { color: #38A169; }
+    .type-b .type-keyword { color: #DD6B20; }
+    .type-c .type-keyword { color: #E53E3E; }
+
+    .type-body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333333;
+    }
+
+    .type-symptom {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #E53E3E;
+      margin-top: 10px;
+    }
+
+    /* Result Card */
+    .result-card {
+      background: #1B4965;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 20px 0;
+      width: 350px;
+      text-align: center;
+    }
+
+    .result-card .label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .result-card .type-result {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 4px 0;
+    }
+
+    .result-card .type-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.87);
+      margin-bottom: 12px;
+    }
+
+    .result-card .type-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.73);
+    }
+
+    /* Callout */
+    .callout {
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .callout.warm {
+      background: #FFF7ED;
+    }
+
+    .callout.warm p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #9A3412;
+    }
+
+    .callout.blue {
+      background: #E8F0F6;
+    }
+
+    .callout.blue p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+    }
+
+    /* Tomorrow Card */
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 20px 0;
+      width: 350px;
+    }
+
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
+    }
+
+    .tomorrow-card .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* CTA Button */
+    .cta-section {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 40px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 28px 20px 16px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Image -->
+  <div class="hero"></div>
+
+  <!-- Day Badge -->
+  <div class="day-badge">Day 3 ── 自分ごと化</div>
+
+  <!-- Title -->
+  <h1 class="article-title">あなたのいびきは<br>軽度？重度？<br>3日間のデータでわかる<br>タイプ診断</h1>
+
+  <!-- Lead -->
+  <p class="body-text">おはようございます。<br>3日間の計測、本当にお疲れさまでした。</p>
+  <p class="body-text">今日は少し特別な回です。3日分のデータが揃ったことで、あなたのいびきの「パターン」が見えてきました。</p>
+
+  <!-- H2: 計測データまとめ -->
+  <h2 class="section-h2">3日間の計測データまとめ</h2>
+
+  <!-- Data Card -->
+  <div class="data-card">
+    <div class="dc-title">📊 3日間の計測サマリー</div>
+    <div class="dc-divider"></div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>最大音量</th>
+          <th>平均音量</th>
+          <th>いびき時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Day 1</td>
+          <td>{{最大音量_day1}}dB</td>
+          <td>{{平均音量_day1}}dB</td>
+          <td>{{いびき時間_day1}}分</td>
+        </tr>
+        <tr>
+          <td>Day 2</td>
+          <td>{{最大音量_day2}}dB</td>
+          <td>{{平均音量_day2}}dB</td>
+          <td>{{いびき時間_day2}}分</td>
+        </tr>
+        <tr>
+          <td>Day 3</td>
+          <td>{{最大音量_day3}}dB</td>
+          <td>{{平均音量_day3}}dB</td>
+          <td>{{いびき時間_day3}}分</td>
+        </tr>
+        <tr class="avg-row">
+          <td>3日間平均</td>
+          <td>{{最大音量_avg}}dB</td>
+          <td>{{平均音量_avg}}dB</td>
+          <td>{{いびき時間_avg}}分</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">日によって差がありますね。飲酒や疲労、寝る姿勢によっていびきの出方が変わることがわかります。</div>
+  </div>
+
+  <!-- H2: タイプ診断 -->
+  <h2 class="section-h2">あなたのいびきタイプ診断</h2>
+
+  <p class="body-text">いびきナビでは、計測データに基づいて、いびきを3つのタイプに分類しています。3日間のデータから、あなたのタイプが判定されました。</p>
+
+  <!-- Type A -->
+  <div class="type-card type-a">
+    <div class="type-header">
+      <div class="type-badge-circle">A</div>
+      <div class="type-info">
+        <div class="type-name">タイプA：軽度いびき</div>
+        <div class="type-range">最大音量 40dB以下</div>
+      </div>
+    </div>
+    <div class="type-keyword">「今は大丈夫。でも油断は禁物」</div>
+    <div class="type-body">現時点では音量は比較的おだやかな範囲です。ただし年齢とともに悪化する傾向があり、40代で軽度→50代で中程度以上に悪化する割合は約30%にのぼります。</div>
+  </div>
+
+  <!-- Type B -->
+  <div class="type-card type-b">
+    <div class="type-header">
+      <div class="type-badge-circle">B</div>
+      <div class="type-info">
+        <div class="type-name">タイプB：中程度いびき</div>
+        <div class="type-range">最大音量 50〜65dB</div>
+      </div>
+    </div>
+    <div class="type-keyword">「家族の睡眠に影響が出ているレベル」</div>
+    <div class="type-body">同室のパートナーの睡眠に確実に影響。気道がかなり狭くなっている可能性があります。50dB以上の習慣的いびきは睡眠時無呼吸症候群に移行するリスクが高いとされています。今対策を始めれば改善の余地が大きい段階です。</div>
+  </div>
+
+  <!-- Type C -->
+  <div class="type-card type-c">
+    <div class="type-header">
+      <div class="type-badge-circle">C</div>
+      <div class="type-info">
+        <div class="type-name">タイプC：重度いびき</div>
+        <div class="type-range">最大音量 65dB以上 / 無呼吸検出あり</div>
+      </div>
+    </div>
+    <div class="type-keyword">「体がSOSを出しています」</div>
+    <div class="type-body">65dBを超えるいびきは掃除機に匹敵する音量。睡眠中に何度も呼吸が止まっている可能性があります。睡眠時無呼吸症候群は日本国内で推定300〜500万人の潜在患者がいます。</div>
+    <div class="type-symptom">⚠ こんな症状はありませんか？<br>・朝ぐっすり眠った感じがしない<br>・会議中や運転中に強い眠気<br>・起床時に頭痛、口がカラカラ</div>
+  </div>
+
+  <!-- H2: 判定結果 -->
+  <h2 class="section-h2">あなたの判定結果</h2>
+
+  <p class="body-text">3日間の計測データから、<br>あなたのいびきタイプは...</p>
+
+  <!-- Result Card -->
+  <div class="result-card">
+    <div class="label">あなたのいびきタイプ</div>
+    <div class="type-result">{{判定タイプ}}</div>
+    <div class="type-name">{{判定タイプ名}}</div>
+    <div class="type-desc">{{判定コメント}}</div>
+  </div>
+
+  <!-- Callout -->
+  <div class="callout warm">
+    <p>具体的な対策はDay 6でお伝えします。データが多いほど、より的確なアドバイスができます。</p>
+  </div>
+
+  <!-- H2: これから -->
+  <h2 class="section-h2">これから何をすればいいか</h2>
+
+  <p class="body-text">まずはあと4日間、計測を続けてください。データが多いほど、正確な傾向がわかります。今のうちから自分のいびきを「見える化」しておくことが、将来のリスク予防につながります。</p>
+
+  <!-- Callout blue -->
+  <div class="callout blue">
+    <p>あと4日間のプログラムで、具体的な改善策までお伝えします。大切なのは「知ること」と「正しく対処すること」です。</p>
+  </div>
+
+  <!-- Tomorrow Card -->
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">いびきを放置するとどうなる？<br>10年後に待っている<br>4つのリスク</div>
+    <div class="desc">「今は大丈夫」と思っている方にこそ読んでほしい内容です。研究データと実例をもとにお伝えします。</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="#" class="cta-btn">今夜も計測する 🌙</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>いびきナビ「7日間いびき改善プログラム」Day 3</p>
+    <p>© 2026 いびきナビ All Rights Reserved.</p>
+  </div>
+
+</body>
+</html>
