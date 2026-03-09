@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>あなたのいびきで、パートナーは1時間に21回起きている</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: url('https://yusukematsui-cloud.github.io/ibiki-navi-articles/day5_hero.png') center/cover;
+    }
+
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 16px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 24px 20px 0;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-top: 24px;
+    }
+
+    .stat-dark {
+      background: #1B4965;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .stat-dark .value {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .stat-dark .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    .stat-dark .src {
+      font-size: 10px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    .impact-card {
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 12px 20px 0;
+      width: 350px;
+    }
+
+    .impact-card .ic-title {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .impact-card .ic-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #333333;
+      margin-top: 4px;
+    }
+
+    .ic-blue { background: #E8F0F6; }
+    .ic-blue .ic-title { color: #1B4965; }
+
+    .ic-orange { background: #FFF7ED; }
+    .ic-orange .ic-title { color: #DD6B20; }
+
+    .ic-red { background: #FFF5F5; }
+    .ic-red .ic-title { color: #E53E3E; }
+
+    .ic-purple { background: #F5F0FF; }
+    .ic-purple .ic-title { color: #805AD5; }
+
+    .stat-light {
+      background: #F7F7F5;
+      border-radius: 14px;
+      padding: 12px 20px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .stat-light .value {
+      font-size: 36px;
+      font-weight: 700;
+      color: #E53E3E;
+      display: inline;
+    }
+
+    .stat-light .sub {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1A1A1A;
+      margin-left: 16px;
+    }
+
+    .stat-light .desc {
+      font-size: 12px;
+      color: #6B7C93;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .quote-card {
+      background: #FFF7ED;
+      border-radius: 14px;
+      padding: 12px 20px 16px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .quote-card .quote-mark {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(244,132,95,0.25);
+      line-height: 1;
+    }
+
+    .quote-card .quote-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.8;
+      color: #9A3412;
+      margin-top: -8px;
+    }
+
+    .callout {
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin: 16px 20px 0;
+      width: 350px;
+      background: #E8F0F6;
+    }
+
+    .callout p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+      text-align: center;
+    }
+
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 20px 0;
+      width: 350px;
+    }
+
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
+    }
+
+    .tomorrow-card .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    .cta-section { text-align: center; margin-top: 24px; }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 40px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 16px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero"></div>
+
+  <div class="day-badge">Day 5 ── 動機づけ</div>
+
+  <h1 class="article-title">あなたのいびきで、<br>パートナーは1時間に<br>21回起きている</h1>
+
+  <p class="body-text">おはようございます。</p>
+  <p class="body-text">今日は少し視点を変えて、あなたの隣で寝ている人の話をさせてください。</p>
+  <p class="body-text">パートナーから「いびきがうるさい」と言われたこと。あの言葉の裏で、パートナーの体に何が起きているのか。今日はそれをデータで見ていきます。</p>
+
+  <h2 class="section-h2">1時間に21回。<br>あなたの隣で起きていること</h2>
+
+  <div class="stat-dark">
+    <div class="value">21回/時間</div>
+    <div class="desc">パートナーが睡眠中に覚醒する回数</div>
+    <div class="src">Beninati et al., Chest, 1999</div>
+  </div>
+
+  <p class="body-text">いびきをかく人のパートナーは、1時間に最大21回、睡眠中に覚醒しています。</p>
+  <p class="body-text">本人は覚えていません。脳波レベルの微小覚醒（マイクロアローザル）が大半です。でも、この微小覚醒が繰り返されることで、睡眠の質は確実に壊されていきます。</p>
+  <p class="body-text">結果として、パートナーは1晩あたり約1時間以上の睡眠を失っています。</p>
+  <p class="body-text">毎晩1時間。1週間で7時間。月に換算すると、丸1日以上の睡眠が消えている計算です。</p>
+
+  <h2 class="section-h2">パートナーの体に起きていること</h2>
+
+  <div class="impact-card ic-blue">
+    <div class="ic-title">慢性的な疲労</div>
+    <div class="ic-desc">朝起きても体が重い。日中ぼんやりする。隣からの騒音による睡眠の分断が原因。</div>
+  </div>
+
+  <div class="impact-card ic-orange">
+    <div class="ic-title">集中力の低下</div>
+    <div class="ic-desc">仕事でミスが増える。運転中にヒヤッとする。本人も気づかないうちに低下しています。</div>
+  </div>
+
+  <div class="impact-card ic-red">
+    <div class="ic-title">メンタルへの影響</div>
+    <div class="ic-desc">慢性的な睡眠不足は、うつ症状のリスクを高めます。</div>
+  </div>
+
+  <div class="impact-card ic-purple">
+    <div class="ic-title">免疫機能の低下</div>
+    <div class="ic-desc">風邪をひきやすい、体調を崩しやすい。そういった変化が出ている可能性も。</div>
+  </div>
+
+  <h2 class="section-h2">「別室で寝る」が<br>増えている現実</h2>
+
+  <div class="stat-light">
+    <span class="value">16%</span><span class="sub">約500万人</span>
+    <div class="desc">いびきが原因で別室就寝している夫婦の割合<br>2009年の7%から10年で倍増</div>
+  </div>
+
+  <p class="body-text">別室就寝は「対策」ではなく「あきらめ」です。根本的な原因はそのままで、夫婦の物理的な距離だけが広がっていく。会話が減る。スキンシップが減る。気づいたときには心の距離まで広がっていた──そんなケースは珍しくありません。</p>
+
+  <img class="section-img" src="https://yusukematsui-cloud.github.io/ibiki-navi-articles/day5_couple.png" alt="">
+
+  <h2 class="section-h2">「いびきがうるさい」は、<br>SOSのサイン</h2>
+
+  <p class="body-text">パートナーが「いびきがうるさい」と言ったあの瞬間。あれは単なる不満やクレームではなかったはずです。</p>
+
+  <div class="quote-card">
+    <div class="quote-mark">"</div>
+    <div class="quote-text">「あなたの体が心配」というメッセージ。<br>「私もつらい」というSOS。<br>「一緒になんとかしたい」という気持ち。</div>
+  </div>
+
+  <p class="body-text">言い方はぶっきらぼうだったかもしれません。でも、あの指摘がなければこのアプリを使い始めていなかった。パートナーのあの一言が、あなたの健康を守る最初のきっかけだったのです。</p>
+
+  <img class="section-img" src="https://yusukematsui-cloud.github.io/ibiki-navi-articles/day5_hope.png" alt="">
+
+  <h2 class="section-h2">いびきを治すと、こうなります</h2>
+
+  <p class="body-text">いびきを治すことは、夫婦関係を治すことにもつながります。</p>
+
+  <div class="callout">
+    <p>いびきを治すことは<br>自分のためだけではありません。<br>隣で寝ている大切な人のためでもあるのです。</p>
+  </div>
+
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">あなたに合った<br>いびき対策はこの3つ</div>
+    <div class="desc">タイプ別の具体的な対策方法をご紹介します。いよいよ解決策です。</div>
+  </div>
+
+  <div class="cta-section">
+    <a href="#" onclick="var f=document.createElement('iframe');f.style.display='none';f.src='ibiki-navi://measure';document.body.appendChild(f);return false;" class="cta-btn">今夜も計測する 🌙</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
+
+  <div class="footer">
+    <p>Day 5 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
+  </div>
+
+</body>
+</html>

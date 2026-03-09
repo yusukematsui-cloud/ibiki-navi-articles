@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>いびきを放置するとどうなる？｜10年後に待っている4つのリスク</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: url('https://yusukematsui-cloud.github.io/ibiki-navi-articles/day4_hero.png') center/cover;
+    }
+
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 16px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 24px 20px 0;
+    }
+
+    .case-img {
+      width: 350px;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin: 16px 20px 0;
+    }
+
+    .timeline-card {
+      border-radius: 14px;
+      padding: 14px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .timeline-card .period {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .timeline-card .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .timeline-card .card-desc {
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.7;
+      color: #333333;
+      margin-top: 8px;
+    }
+
+    .tc-blue { background: #E8F0F6; }
+    .tc-blue .period, .tc-blue .card-title { color: #1B4965; }
+
+    .tc-orange { background: #FFF7ED; }
+    .tc-orange .period, .tc-orange .card-title { color: #DD6B20; }
+
+    .tc-red { background: #FFF5F5; }
+    .tc-red .period, .tc-red .card-title { color: #E53E3E; }
+
+    .tc-purple { background: #F5F0FF; }
+    .tc-purple .period, .tc-purple .card-title { color: #805AD5; }
+
+    .source {
+      font-size: 11px;
+      color: #999999;
+      line-height: 1.5;
+      padding: 12px 20px 0;
+    }
+
+    .stat-card {
+      background: #F7F7F5;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .stat-card .value {
+      font-size: 40px;
+      font-weight: 700;
+      color: #E53E3E;
+    }
+
+    .stat-card .desc {
+      font-size: 15px;
+      color: #6B7C93;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .callout {
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin: 16px 20px 0;
+      width: 350px;
+      background: #E8F0F6;
+    }
+
+    .callout p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+      text-align: center;
+    }
+
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 24px 20px 0;
+      width: 350px;
+    }
+
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
+    }
+
+    .tomorrow-card .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    .cta-section { text-align: center; margin-top: 24px; }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 40px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 16px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero"></div>
+
+  <div class="day-badge">Day 4 ── 危機感</div>
+
+  <h1 class="article-title">いびきを放置すると<br>どうなる？<br>10年後に待っている<br>4つのリスク</h1>
+
+  <p class="body-text">おはようございます。<br>昨日のコラムでは、あなたのいびきタイプについてお伝えしました。今日は少しシビアな話をさせてください。</p>
+  <p class="body-text">「放っておいたら、どうなるのか」という話です。</p>
+
+  <h2 class="section-h2">45歳・Aさんのケース</h2>
+
+  <img class="case-img" src="https://yusukematsui-cloud.github.io/ibiki-navi-articles/day4_case.png" alt="">
+
+  <p class="body-text">Aさんは45歳の会社員。奥さんから「いびきがすごいよ」と何度か言われていましたが、「疲れてるだけだろう」と放置。5年後の健康診断で高血圧を指摘。降圧剤が効かず精密検査で中等度の睡眠時無呼吸と診断。</p>
+  <p class="body-text">Aさんのいびきは、5年前から体が出していたSOSだったのです。</p>
+
+  <h2 class="section-h2">放置した場合の10年カレンダー</h2>
+
+  <div class="timeline-card tc-blue">
+    <div class="period">1〜2年後</div>
+    <div class="card-title">仕事のパフォーマンスが落ちる</div>
+    <div class="card-desc">生産性が12〜15%低下。年収600万円なら年間72〜90万円分の損失</div>
+  </div>
+
+  <div class="timeline-card tc-orange">
+    <div class="period">3〜5年後</div>
+    <div class="card-title">高血圧がやってくる</div>
+    <div class="card-desc">未治療の睡眠時無呼吸がある人の約50%が高血圧を発症</div>
+  </div>
+
+  <div class="timeline-card tc-red">
+    <div class="period">5〜10年後</div>
+    <div class="card-title">心臓と脳のリスクが現実になる</div>
+    <div class="card-desc">脳卒中リスク46%増加<br>心血管疾患による死亡リスク約2.6倍</div>
+  </div>
+
+  <div class="timeline-card tc-purple">
+    <div class="period">10年以上</div>
+    <div class="card-title">脳そのものへの影響</div>
+    <div class="card-desc">未治療の睡眠時無呼吸症候群の患者は認知症の発症リスクが2倍以上</div>
+  </div>
+
+  <p class="source">出典: Sassani et al., Sleep, 2004 / Peppard et al., NEJM, 2000 / Marin et al., Lancet, 2005 / Leng et al., JAMA Neurology, 2017</p>
+
+  <h2 class="section-h2">お金の話もしておきます</h2>
+
+  <div class="stat-card">
+    <div class="value">2.5倍</div>
+    <div class="desc">未治療の睡眠時無呼吸症候群の<br>年間医療費（健康な人と比較）</div>
+  </div>
+
+  <p class="body-text">「たかがいびき」の経済的コストは想像以上に大きいのです。通院費、薬代、パフォーマンス低下──これは「他人事」ではありません。</p>
+
+  <p class="source">出典: Kapur et al., Sleep, 1999 / RAND Corporation, 2016 "Why Sleep Matters"</p>
+
+  <h2 class="section-h2">今から対策すれば間に合います</h2>
+
+  <p class="body-text">ここまで怖い話をしましたが、希望のデータもあります。</p>
+  <p class="body-text">適切な治療を行った患者は、3ヶ月で血圧が平均10mmHg低下。1年後には心血管イベントのリスクが健常者と同等レベルまで改善。</p>
+  <p class="body-text">大切なのは「気づいた時点で始める」こと。</p>
+
+  <p class="source">出典: Peppard et al., JAMA, 2000 / Marin et al., The Lancet, 2005</p>
+
+  <div class="callout">
+    <p>今日の記事を読んで不安になった方へ──<br>まずは「知ること」が最大の予防です。<br>今夜の計測データが、未来を変える第一歩に。</p>
+  </div>
+
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">あなたのいびきで、パートナーは<br>1時間に21回起きている</div>
+    <div class="desc">少し視点を変えて、あなたの隣で寝ている人の話をさせてください。</div>
+  </div>
+
+  <div class="cta-section">
+    <a href="#" onclick="var f=document.createElement('iframe');f.style.display='none';f.src='ibiki-navi://measure';document.body.appendChild(f);return false;" class="cta-btn">今夜も計測する 🌙</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
+
+  <div class="footer">
+    <p>Day 4 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
+  </div>
+
+</body>
+</html>
