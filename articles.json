@@ -1,5 +1,13 @@
 [
   {
+    "id": "day1",
+    "title": "いびきがうるさいと言われたら。\nあなたのいびきは何デシベル？",
+    "summary": "初めての計測データを見てみましょう。身の回りの音と比べると、あなたのいびきは…",
+    "url": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day1.html",
+    "imageUrl": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day1-hero.png",
+    "date": "2026-03-11"
+  },
+  {
     "id": "1",
     "title": "いびきは体のSOS？\n放置してはいけない5つの理由",
     "summary": "いびきには口呼吸型、鼻づまり型など複数のタイプがあります。放置するとどんなリスクがあるのか解説します。",
