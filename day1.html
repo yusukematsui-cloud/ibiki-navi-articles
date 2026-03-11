@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>いびきがうるさいと言われたら。あなたのいびきは何デシベル？</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%),
+                  url('day1-hero.png') center/cover;
+    }
+
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 28px 20px 0;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin-top: 24px;
+    }
+
+    .source {
+      font-size: 11px;
+      color: #999999;
+      line-height: 1.5;
+      padding: 10px 20px 0;
+    }
+
+    /* Stat Cards */
+    .stat-row {
+      display: flex;
+      gap: 10px;
+      padding: 16px 20px 0;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: #F7F7F5;
+      border-radius: 12px;
+      padding: 12px 16px;
+      height: 90px;
+    }
+
+    .stat-card .label {
+      font-size: 12px;
+      color: #6B7C93;
+    }
+
+    .stat-card .value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1B4965;
+      margin-top: 8px;
+    }
+
+    /* Callout */
+    .callout {
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 20px 20px 0;
+      width: 350px;
+    }
+
+    .callout.warm {
+      background: #FFF7ED;
+    }
+
+    .callout.warm p {
+      font-size: 13px;
+      color: #9A3412;
+      line-height: 1.7;
+    }
+
+    .callout.blue {
+      background: #E8F0F6;
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .callout.blue p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+    }
+
+    /* Tomorrow Card */
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 40px 20px 0;
+      width: 350px;
+    }
+
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
+    }
+
+    .tomorrow-card .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 42px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 20px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero"></div>
+
+  <!-- Day Badge -->
+  <div class="day-badge">Day 1 ── 気づき</div>
+
+  <!-- Title -->
+  <h1 class="article-title">いびきがうるさいと<br>言われたら。<br>あなたのいびきは<br>何デシベル？</h1>
+
+  <!-- Lead -->
+  <p class="body-text">おはようございます。</p>
+  <p class="body-text">昨晩、いびきナビでの初めての計測、お疲れさまでした。「いびきがうるさい」と言われて気になった方へ。まずは昨晩のデータを見てみましょう。</p>
+
+  <!-- Section Image 1 -->
+  <img class="section-img" src="day1-sec1.png" alt="">
+
+  <!-- H2: 昨晩のいびき -->
+  <h2 class="section-h2">あなたの昨晩のいびき</h2>
+
+  <!-- Stat Cards -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="label">最大音量</div>
+      <div class="value" id="maxDbCard">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">平均音量</div>
+      <div class="value" id="avgDbCard">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">いびき時間</div>
+      <div class="value" id="snoreMinCard">--</div>
+    </div>
+  </div>
+
+  <p class="body-text">数字だけ見てもピンとこないですよね。そこで、身の回りの音と比べてみましょう。</p>
+
+  <!-- H2: 身近な音と比べると -->
+  <h2 class="section-h2">身近な音と比べると</h2>
+
+  <p class="body-text">30dB ─ ささやき声<br>40dB ─ 図書館<br>50dB ─ 静かなオフィス<br>60dB ─ 普通の会話<br><strong id="dbScaleUser">--dB ─ あなたのいびき</strong><br>70dB ─ 掃除機の音<br>80dB ─ 地下鉄の車内</p>
+
+  <!-- Callout dB -->
+  <div class="callout warm">
+    <p id="calloutDb">あなたのいびきは最大--dB。身の回りの音と比べてみると、けっこう気になる音量です。</p>
+  </div>
+
+  <!-- H2: 4人に1人 -->
+  <h2 class="section-h2">日本人男性の4人に1人が<br>いびきをかいています</h2>
+
+  <!-- Stat Cards -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="label">習慣性いびき有病率</div>
+      <div class="value">24.6%</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">40代以降の男性</div>
+      <div class="value">3人に1人</div>
+    </div>
+  </div>
+
+  <p class="body-text">「自分、そんなにいびきかいてたのか...」と少し驚いたかもしれません。</p>
+
+  <p class="body-text">でも、安心してください。日本人男性の約24%が習慣的にいびきをかいているという調査結果があります。つまり、男性の4人に1人がいびきをかいているわけです。</p>
+
+  <p class="body-text">年代別に見ると、さらにその割合は上がります。40代以降の男性では、3人に1人以上が何らかのいびきの症状を持っているとされています。</p>
+
+  <p class="body-text">いびきをかくこと自体が「異常」なわけではありません。ただ、いびきの「大きさ」や「パターン」には個人差があります。そして、その違いが大切なんです。</p>
+
+  <p class="source">出典: 日本呼吸器学会「成人の睡眠呼吸障害に関する疫学調査」/ Benjafield et al., The Lancet Respiratory Medicine, 2019</p>
+
+  <!-- Section Image 2 -->
+  <img class="section-img" src="day1-sec2.png" alt="">
+
+  <!-- H2: 3日間計測 -->
+  <h2 class="section-h2">まずは3日間、<br>計測を続けてみてください</h2>
+
+  <p class="body-text">1日の計測だけでは、たまたまその日だけ大きかった（あるいは小さかった）という可能性もあります。</p>
+
+  <p class="body-text">お酒を飲んだ日と飲まなかった日、疲れている日とそうでない日では、いびきの出方も変わります。</p>
+
+  <p class="body-text">今日のところは、「自分のいびきはだいたいこれくらいなんだな」という目安として受け止めてもらえれば大丈夫です。</p>
+
+  <!-- Callout -->
+  <div class="callout blue">
+    <p>3日分のデータが揃ったら、<br>あなたのいびきタイプを診断します。<br>まずはデータを積み重ねましょう。</p>
+  </div>
+
+  <!-- Tomorrow Card -->
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">いびきは体に悪い？<br>放置してはいけない3つの医学的理由</div>
+    <div class="desc">実は最近の研究で、ちょっと見過ごせないデータが出ています。</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="ibiki-navi://home" class="cta-btn">今夜も計測する</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Day 1 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
+  </div>
+
+  <script>
+    // URLクエリパラメータからデータを取得
+    // アプリ側: day1.html?maxDb=62&avgDb=48&snoreMin=142
+    var p = new URLSearchParams(location.search);
+    var maxDb = p.get('maxDb');
+    var avgDb = p.get('avgDb');
+    var snoreMin = p.get('snoreMin');
+
+    // dBから身近な音の例えを返す
+    function getDbExample(db) {
+      if (db < 40) return 'ささやき声';
+      if (db < 50) return '図書館の静けさ';
+      if (db < 60) return '静かなオフィス';
+      if (db < 70) return '普通の会話やテレビの音量';
+      if (db < 80) return '掃除機の音';
+      return '地下鉄の車内の騒音';
+    }
+
+    if (maxDb) {
+      document.getElementById('maxDbCard').textContent = maxDb + 'dB';
+      document.getElementById('dbScaleUser').textContent = maxDb + 'dB ─ あなたのいびき';
+      var example = getDbExample(Number(maxDb));
+      document.getElementById('calloutDb').textContent =
+        'あなたのいびきは最大' + maxDb + 'dB。これは、' + example + 'くらいのレベルです。静かに眠りたい人にとっては、けっこう気になる音量です。';
+    }
+    if (avgDb) {
+      document.getElementById('avgDbCard').textContent = avgDb + 'dB';
+    }
+    if (snoreMin) {
+      document.getElementById('snoreMinCard').textContent = snoreMin + '分';
+    }
+  </script>
+
+</body>
+</html>
