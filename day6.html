@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>あなたのいびきを解決する3つの方法</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%),
+                  url('day6-hero.png') center/cover;
+    }
+
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.9;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 28px 20px 0;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin-top: 24px;
+    }
+
+    .source {
+      font-size: 11px;
+      color: #999999;
+      line-height: 1.5;
+      padding: 10px 20px 0;
+    }
+
+    /* Stat Cards */
+    .stat-row {
+      display: flex;
+      gap: 10px;
+      padding: 16px 20px 0;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: #F7F7F5;
+      border-radius: 12px;
+      padding: 12px 16px;
+      height: 90px;
+    }
+
+    .stat-card .label {
+      font-size: 12px;
+      color: #6B7C93;
+    }
+
+    .stat-card .value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1B4965;
+      margin-top: 8px;
+    }
+
+    /* Callout */
+    .callout {
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 20px 20px 0;
+      width: 350px;
+    }
+
+    .callout.warm {
+      background: #FFF7ED;
+    }
+
+    .callout.warm p {
+      font-size: 13px;
+      color: #9A3412;
+      line-height: 1.7;
+    }
+
+    .callout.blue {
+      background: #E8F0F6;
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .callout.blue p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+    }
+
+    .callout.green {
+      background: #F0F7F4;
+    }
+
+    .callout.green p {
+      font-size: 13px;
+      color: #2D6A4F;
+      line-height: 1.7;
+    }
+
+    /* Option Card */
+    .option-card {
+      background: #F7F7F5;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin: 16px 20px 0;
+      width: 350px;
+    }
+
+    .option-card .option-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #6B7C93;
+      letter-spacing: 1px;
+    }
+
+    .option-card .option-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-top: 6px;
+    }
+
+    .option-card .option-target {
+      font-size: 12px;
+      color: #6B7C93;
+      margin-top: 4px;
+    }
+
+    /* Tomorrow Card */
+    .tomorrow-card {
+      background: #2C3E2E;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 40px 20px 0;
+      width: 350px;
+    }
+
+    .tomorrow-card .label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 2px;
+    }
+
+    .tomorrow-card .sub-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    .tomorrow-card .title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .tomorrow-card .desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 42px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 20px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero"></div>
+
+  <!-- Day Badge -->
+  <div class="day-badge">Day 6 ── 解決策</div>
+
+  <!-- Title -->
+  <h1 class="article-title">あなたのいびきを<br>解決する3つの方法</h1>
+
+  <!-- Lead -->
+  <p class="body-text">6日間の計測、お疲れさまでした。</p>
+  <p class="body-text">ここまで、いびきの実態やリスクをお伝えしてきました。「じゃあ、どうすればいいの？」──今日はその答えです。</p>
+  <p class="body-text">いびき対策には大きく3つの方法があります。「これならやれそう」と思えるものを、ひとつ選んでみてください。</p>
+
+  <!-- Option A -->
+  <div class="option-card">
+    <div class="option-label">選択肢 A</div>
+    <div class="option-title">手軽に始められるグッズ</div>
+    <div class="option-target">軽度いびき（40dB以下）/ まず試したい方向け</div>
+  </div>
+
+  <p class="body-text">いちばんハードルが低い方法です。今日からでも始められます。</p>
+
+  <p class="body-text">・いびき防止枕（5,000〜15,000円）<br>　気道を確保しやすい角度をキープ<br>・口閉じテープ（500〜1,000円/月）<br>　鼻呼吸を促す。最も手軽<br>・ナステント（3,000〜5,000円/月）<br>　鼻から気道を直接確保<br>・横向き寝サポーター（3,000〜8,000円）<br>　仰向け寝を物理的に防ぐ</p>
+
+  <div class="callout warm">
+    <p>体重を10%減らすだけで、いびきの重症度は26%改善するという研究データもあります。グッズと生活習慣の改善を組み合わせると、さらに効果的です。</p>
+  </div>
+
+  <!-- Option B -->
+  <div class="option-card">
+    <div class="option-label">選択肢 B</div>
+    <div class="option-title">マウスピース（口腔内装置）</div>
+    <div class="option-target">中程度いびき（40〜65dB）/ グッズで改善しなかった方向け</div>
+  </div>
+
+  <p class="body-text">歯科で作る専用のマウスピースです。下あごを数ミリ前に出すことで、喉の奥の気道を広げます。</p>
+
+  <!-- Stat Cards -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="label">有効率</div>
+      <div class="value">92%</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">保険適用費用</div>
+      <div class="value">約1〜3万</div>
+    </div>
+  </div>
+
+  <p class="body-text">型取りから約2週間で完成。最近は3Dプリント技術でフィット感も向上しています。</p>
+
+  <!-- Option C -->
+  <div class="option-card">
+    <div class="option-label">選択肢 C</div>
+    <div class="option-title">耳鼻咽喉科の受診・専門治療</div>
+    <div class="option-target">重度いびき（65dB以上）/ 無呼吸の疑いがある方向け</div>
+  </div>
+
+  <p class="body-text"><strong>CPAP（シーパップ）</strong><br>鼻にマスクをつけて空気を送り込み、気道を開いたまま保つ治療法。睡眠時無呼吸症候群の標準治療です。保険適用で月約4,500円。</p>
+
+  <p class="body-text"><strong>手術（UPPP等）</strong><br>口蓋垂や軟口蓋の余分な組織を除去して気道を広げます。</p>
+
+  <p class="body-text"><strong>レーザー治療</strong><br>低侵襲レーザーで軟口蓋の組織を引き締めます。日帰り可能。</p>
+
+  <div class="callout blue">
+    <p>まずは耳鼻咽喉科か睡眠外来を受診し、<br>PSG検査でいびきの原因と重症度を<br>正確に特定することが最初のステップです。</p>
+  </div>
+
+  <!-- Section Image 3 -->
+  <img class="section-img" src="day6-sec3.png" alt="">
+
+  <!-- H2: どれが合う？ -->
+  <h2 class="section-h2">あなたにはどれが合う？</h2>
+
+  <p class="body-text">いびきナビで計測した最大音量を目安に、自分に合った方法を選んでみてください。</p>
+
+  <p class="body-text">・40dB以下 → まず「グッズ」で対策開始<br>・40〜65dB → 「マウスピース」を検討<br>・65dB以上 → 「専門医の受診」をおすすめ</p>
+
+  <p class="body-text">もちろん、これはあくまで目安です。複数の方法を組み合わせるのも有効ですし、段階的に試していくのも賢い選択です。</p>
+
+  <div class="callout green">
+    <p>大切なのは、「何もしない」以外の選択をすること。どんな小さな一歩でも、昨日までのあなたとは違います。</p>
+  </div>
+
+  <p class="source">出典: Sutherland K et al., AJRCCM 2014 / Peppard PE et al., JAMA 2000</p>
+
+  <!-- Tomorrow Card -->
+  <div class="tomorrow-card">
+    <div class="label">TOMORROW</div>
+    <div class="sub-title">明日のコラム</div>
+    <div class="title">計測完了。あなたの<br>1週間いびきレポート</div>
+    <div class="desc">7日間のデータ総まとめと、具体的なアクションプランをお届けします。</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="ibiki-navi://measure" class="cta-btn">今夜も計測する</a>
+    <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Day 6 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
+  </div>
+
+
+</body>
+</html>
