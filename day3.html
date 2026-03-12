@@ -398,27 +398,27 @@
       <tbody>
         <tr>
           <td>Day 1</td>
-          <td>{{最大音量_day1}}dB</td>
-          <td>{{平均音量_day1}}dB</td>
-          <td>{{いびき時間_day1}}分</td>
+          <td><span id="maxDb1">--</span>dB</td>
+          <td><span id="avgDb1">--</span>dB</td>
+          <td><span id="snoreMin1">--</span>分</td>
         </tr>
         <tr>
           <td>Day 2</td>
-          <td>{{最大音量_day2}}dB</td>
-          <td>{{平均音量_day2}}dB</td>
-          <td>{{いびき時間_day2}}分</td>
+          <td><span id="maxDb2">--</span>dB</td>
+          <td><span id="avgDb2">--</span>dB</td>
+          <td><span id="snoreMin2">--</span>分</td>
         </tr>
         <tr>
           <td>Day 3</td>
-          <td>{{最大音量_day3}}dB</td>
-          <td>{{平均音量_day3}}dB</td>
-          <td>{{いびき時間_day3}}分</td>
+          <td><span id="maxDb3">--</span>dB</td>
+          <td><span id="avgDb3">--</span>dB</td>
+          <td><span id="snoreMin3">--</span>分</td>
         </tr>
         <tr class="avg-row">
           <td>3日間平均</td>
-          <td>{{最大音量_avg}}dB</td>
-          <td>{{平均音量_avg}}dB</td>
-          <td>{{いびき時間_avg}}分</td>
+          <td><span id="maxDbAvg">--</span>dB</td>
+          <td><span id="avgDbAvg">--</span>dB</td>
+          <td><span id="snoreMinAvg">--</span>分</td>
         </tr>
       </tbody>
     </table>
@@ -478,9 +478,9 @@
   <!-- Result Card -->
   <div class="result-card">
     <div class="label">あなたのいびきタイプ</div>
-    <div class="type-result">{{判定タイプ}}</div>
-    <div class="type-name">{{判定タイプ名}}</div>
-    <div class="type-desc">{{判定コメント}}</div>
+    <div class="type-result" id="typeResult">--</div>
+    <div class="type-name" id="typeName">--</div>
+    <div class="type-desc" id="typeComment">計測データから判定します</div>
   </div>
 
   <!-- Callout -->
@@ -508,15 +508,41 @@
 
   <!-- CTA -->
   <div class="cta-section">
-    <a href="#" class="cta-btn">今夜も計測する 🌙</a>
+    <a href="ibiki-navi://measure" class="cta-btn">今夜も計測する</a>
     <p class="cta-sub">データが増えるほど、分析の精度が上がります</p>
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    <p>いびきナビ「7日間いびき改善プログラム」Day 3</p>
-    <p>© 2026 いびきナビ All Rights Reserved.</p>
+    <p>Day 3 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
   </div>
+
+  <script>
+    // day3.html?maxDb1=55&avgDb1=42&snoreMin1=18&maxDb2=48&avgDb2=38&snoreMin2=12&maxDb3=62&avgDb3=45&snoreMin3=22&maxDbAvg=55&avgDbAvg=42&snoreMinAvg=17&type=B&typeName=中程度いびき&typeComment=...
+    var p = new URLSearchParams(location.search);
+
+    function set(id, val) {
+      var el = document.getElementById(id);
+      if (el && val) el.textContent = val;
+    }
+
+    set('maxDb1', p.get('maxDb1'));
+    set('avgDb1', p.get('avgDb1'));
+    set('snoreMin1', p.get('snoreMin1'));
+    set('maxDb2', p.get('maxDb2'));
+    set('avgDb2', p.get('avgDb2'));
+    set('snoreMin2', p.get('snoreMin2'));
+    set('maxDb3', p.get('maxDb3'));
+    set('avgDb3', p.get('avgDb3'));
+    set('snoreMin3', p.get('snoreMin3'));
+    set('maxDbAvg', p.get('maxDbAvg'));
+    set('avgDbAvg', p.get('avgDbAvg'));
+    set('snoreMinAvg', p.get('snoreMinAvg'));
+    set('typeResult', p.get('type'));
+    set('typeName', p.get('typeName'));
+    set('typeComment', p.get('typeComment'));
+  </script>
 
 </body>
 </html>

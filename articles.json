@@ -16,6 +16,14 @@
     "date": "2026-03-09"
   },
   {
+    "id": "day3",
+    "title": "あなたのいびきは軽度？重度？\n3日間のデータでわかるタイプ診断",
+    "summary": "3日分の計測データから、あなたのいびきタイプを判定します。",
+    "url": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day3.html",
+    "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400&q=80",
+    "date": "2026-03-12"
+  },
+  {
     "id": "4",
     "title": "いびきを放置するとどうなる？\n10年後に待っている4つのリスク",
     "summary": "放置した場合の10年カレンダーと、今から対策すれば間に合う希望のデータ。",
