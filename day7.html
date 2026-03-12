@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>計測完了。あなたの1週間いびきレポート</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      max-width: 390px;
+      margin: 0 auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%),
+                  url('day7-hero.png') center/cover;
+    }
+
+    .day-badge {
+      display: inline-block;
+      background: #3D6B5B;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 14px;
+      margin: 20px 0 0 20px;
+    }
+
+    .article-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #1A1A1A;
+      padding: 12px 20px 0;
+    }
+
+    .body-text {
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 1.8;
+      color: #333333;
+      padding: 16px 20px 0;
+    }
+
+    .section-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.5;
+      padding: 28px 20px 0;
+    }
+
+    .section-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      margin-top: 24px;
+    }
+
+    /* Stat Cards */
+    .stat-row {
+      display: flex;
+      gap: 14px;
+      padding: 16px 20px 0;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: #F7F7F5;
+      border-radius: 12px;
+      padding: 12px 16px;
+      height: 90px;
+    }
+
+    .stat-card .label {
+      font-size: 12px;
+      color: #6B7C93;
+    }
+
+    .stat-card .value {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1B4965;
+      margin-top: 8px;
+    }
+
+    .stat-card .value.red {
+      color: #E53E3E;
+    }
+
+    /* Callout */
+    .callout {
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 20px 20px 0;
+      width: 350px;
+    }
+
+    .callout.warm {
+      background: #FFF7ED;
+    }
+
+    .callout.warm p {
+      font-size: 13px;
+      color: #9A3412;
+      line-height: 1.7;
+    }
+
+    .callout.blue {
+      background: #E8F0F6;
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .callout.blue p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #1B4965;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4A8C6F;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 42px;
+      border-radius: 25px;
+      text-decoration: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 28px 20px 20px;
+    }
+
+    .footer p {
+      font-size: 11px;
+      color: #BBBBBB;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero"></div>
+
+  <!-- Day Badge -->
+  <div class="day-badge">Day 7 ── 行動</div>
+
+  <!-- Title -->
+  <h1 class="article-title">計測完了。あなたの<br>1週間いびきレポート</h1>
+
+  <!-- Lead -->
+  <p class="body-text">1週間の計測が完了しました。</p>
+  <p class="body-text">7日間、毎晩欠かさず計測を続けてくれたこと、本当にありがとうございます。まずは7日間の計測データを振り返りましょう。</p>
+
+  <!-- Section Image 1 -->
+  <img class="section-img" src="day7-sec1.png" alt="">
+
+  <!-- H2: レポート -->
+  <h2 class="section-h2">あなたの1週間いびきレポート</h2>
+
+  <!-- Stat Cards Row 1 -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="label">7日間平均音量</div>
+      <div class="value" id="avgDb7Card">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">最大音量</div>
+      <div class="value" id="maxDbCard">--</div>
+    </div>
+  </div>
+
+  <!-- Stat Cards Row 2 -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="label">いびきタイプ</div>
+      <div class="value" id="typeCard">--</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">同年代比較</div>
+      <div class="value red" id="diffCard">--</div>
+    </div>
+  </div>
+
+  <!-- H2: 振り返り -->
+  <h2 class="section-h2">この1週間でわかったこと</h2>
+
+  <p class="body-text" id="recapDay1">Day1: 自分のいびきが--dB──身近な音と同じ大きさだった</p>
+  <p class="body-text">Day2: いびきは脳卒中リスク46%増、心血管リスク26%増と関連</p>
+  <p class="body-text" id="recapDay3">Day3: いびきタイプがわかった</p>
+  <p class="body-text">Day4: 放置すると10年後に高血圧・心臓病・認知症リスクが上昇</p>
+  <p class="body-text">Day5: パートナーは1時間に最大21回覚醒し、毎晩1時間以上の睡眠を失っている可能性</p>
+  <p class="body-text" id="recapDay6">Day6: タイプに合った対策がベスト</p>
+
+  <!-- Callout Warm -->
+  <div class="callout warm">
+    <p>7日間で、あなたは「いびきをかいている人」から「自分のいびきを理解している人」に変わりました。これは大きな一歩です。</p>
+  </div>
+
+  <!-- Section Image 2 -->
+  <img class="section-img" src="day7-sec2.png" alt="">
+
+  <!-- H2: アクションプラン -->
+  <h2 class="section-h2">あなたの具体的アクションプラン</h2>
+
+  <p class="body-text">【タイプA: 軽度いびきの方へ】</p>
+  <p class="body-text">STEP 1: いびき防止枕 or 口閉じテープを試す（今日注文する）<br>STEP 2: 2週間いびきナビで計測を続ける<br>STEP 3: 改善なければマウスピースを検討</p>
+
+  <p class="body-text">【タイプB: 中程度いびきの方へ】</p>
+  <p class="body-text">STEP 1: 歯科医院でマウスピースを相談する（今週中に予約）<br>STEP 2: 完成までの間、グッズも並行して使う<br>STEP 3: 使用開始後2〜4週間いびきナビで効果を計測</p>
+
+  <p class="body-text">【タイプC: 重度いびきの方へ】</p>
+  <p class="body-text">STEP 1: 耳鼻咽喉科 or 睡眠外来を予約する（今日、電話する）<br>STEP 2: PSG検査（睡眠ポリグラフ検査）を受ける<br>STEP 3: 専門医と治療方針を決める（鼻マスク療法 月約4,500円 / 手術等）</p>
+
+  <!-- H2: 最後に -->
+  <h2 class="section-h2">最後に</h2>
+
+  <p class="body-text">いびきは、正しい方法なら改善できます。</p>
+
+  <p class="body-text">・体重10%減量で重症度26%改善<br>・マウスピースの有効率92%<br>・適切な治療で医療費37〜48%削減</p>
+
+  <p class="body-text">グッズを1つ注文する。歯科医院に電話する。睡眠外来を予約する。どれでもいい。小さな一歩で構いません。</p>
+
+  <p class="body-text">あなたの快眠と、パートナーの快眠のために。</p>
+
+  <!-- Section Image 3 -->
+  <img class="section-img" src="day7-sec3.png" alt="">
+
+  <!-- H2: 計測を続けて -->
+  <h2 class="section-h2">計測は、これからも続けてください</h2>
+
+  <p class="body-text">対策を始めた後こそ、計測が大事になります。</p>
+  <p class="body-text">グッズやマウスピースを導入する前と後のデータを比較すれば、効果が数字で見えます。</p>
+  <p class="body-text">いびきナビは、あなたの改善をこれからもサポートし続けます。</p>
+  <p class="body-text">1週間後、2週間後、1ヶ月後──データを見て「こんなに変わったんだ」と実感できる日が来ます。</p>
+  <p class="body-text">今夜も、計測をセットしてから眠りについてください。</p>
+
+  <!-- Callout Blue -->
+  <div class="callout blue">
+    <p>いびきナビは、あなたの改善を<br>これからもサポートし続けます。<br>今夜も、計測をセットしてから<br>眠りについてください。</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <a href="ibiki-navi://measure" class="cta-btn">計測を続ける</a>
+    <p class="cta-sub">対策の効果を数字で確認しましょう</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Day 7 of 7 ── いびき改善プログラム</p>
+    <p>配信停止はアプリの設定から</p>
+  </div>
+
+  <script>
+    // アプリ側: day7.html?avgDb7=48&maxDb=62&type=B&diff=12&dbExample=掃除機&snoreType=口呼吸型&recommend=マウスピース
+    var p = new URLSearchParams(location.search);
+    var avgDb7 = p.get('avgDb7');
+    var maxDb = p.get('maxDb');
+    var type = p.get('type');
+    var diff = p.get('diff');
+    var dbExample = p.get('dbExample');
+    var snoreType = p.get('snoreType');
+    var recommend = p.get('recommend');
+
+    if (avgDb7) document.getElementById('avgDb7Card').textContent = avgDb7 + 'dB';
+    if (maxDb) document.getElementById('maxDbCard').textContent = maxDb + 'dB';
+    if (type) document.getElementById('typeCard').textContent = 'タイプ' + type;
+    if (diff) document.getElementById('diffCard').textContent = '+' + diff + 'dB';
+    if (maxDb && dbExample) {
+      document.getElementById('recapDay1').textContent =
+        'Day1: 自分のいびきが' + maxDb + 'dB──' + dbExample + 'と同じ大きさだった';
+    }
+    if (snoreType) {
+      document.getElementById('recapDay3').textContent =
+        'Day3: いびきタイプは「' + snoreType + '」だとわかった';
+    }
+    if (recommend) {
+      document.getElementById('recapDay6').textContent =
+        'Day6: タイプに合った対策として' + recommend + 'がベスト';
+    }
+  </script>
+
+</body>
+</html>

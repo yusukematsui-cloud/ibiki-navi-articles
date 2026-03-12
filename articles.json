@@ -38,5 +38,21 @@
     "url": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day5.html",
     "imageUrl": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day5_hero.png",
     "date": "2026-03-09"
+  },
+  {
+    "id": "day6",
+    "title": "あなたのいびきを\n解決する3つの方法",
+    "summary": "グッズ・マウスピース・専門治療。あなたに合った対策を見つけましょう。",
+    "url": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day6.html",
+    "imageUrl": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day6-hero.png",
+    "date": "2026-03-12"
+  },
+  {
+    "id": "day7",
+    "title": "計測完了。あなたの\n1週間いびきレポート",
+    "summary": "7日間のデータ総まとめと、具体的なアクションプランをお届けします。",
+    "url": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day7.html",
+    "imageUrl": "https://yusukematsui-cloud.github.io/ibiki-navi-articles/day7-hero.png",
+    "date": "2026-03-12"
   }
 ]
